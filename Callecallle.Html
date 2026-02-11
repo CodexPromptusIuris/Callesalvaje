@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botillería Calle Calle | Oficial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --amarillo: #F2DF00;
+            --negro-profundo: #0d0d0d;
+            --negro-tarjeta: #1a1a1a;
+            --verde-wsp: #25D366;
+            --rojo-oferta: #ff4500;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--negro-profundo);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: black;
+            color: var(--amarillo);
+            padding: 2rem 1rem;
+            border-bottom: 4px solid var(--amarillo);
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(242, 223, 0, 0.2);
+        }
+
+        header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .info-bar {
+            background: var(--amarillo);
+            color: black;
+            padding: 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* --- GRILLA DE PRODUCTOS --- */
+        .section-title {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin: 40px 0;
+            color: white;
+        }
+
+        .section-title span { color: var(--amarillo); }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            margin-bottom: 60px;
+        }
+
+        .product-card {
+            background: var(--negro-tarjeta);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #333;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(242, 223, 0, 0.3);
+        }
+
+        .image-wrapper {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background: #222;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--amarillo);
+            color: black;
+            padding: 5px 12px;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .card-content { padding: 20px; text-align: center; }
+        .card-content h3 { margin: 0 0 10px; font-size: 1.4rem; }
+        .price { color: var(--amarillo); font-size: 1.8rem; font-weight: bold; margin: 10px 0; }
+        
+        .buy-btn {
+            background: var(--verde-wsp);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* --- SECCIÓN DEL JUEGO --- */
+        #game-section {
+            background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 2px solid var(--amarillo);
+        }
+
+        #gameCanvas {
+            border: 5px solid var(--amarillo);
+            background: #87ceeb;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(242, 223, 0, 0.1);
+        }
+
+        .game-ui {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        #startBtn {
+            background: var(--amarillo);
+            color: black;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Botillería Calle Calle</h1>
+        <p>DE LA CALLE A TU PREVIA</p>
+    </header>
+
+    <div class="info-bar">
+        <span>📍 CALLE BEAUCHEFF, SANTIAGO</span>
+        <span>📱 PEDIDOS: +56 9 1234 5678</span>
+        <span>🚚 DESPACHO EXPRESS</span>
+    </div>
+
+    <section>
+        <h2 class="section-title">Nuestras <span>Selecciones</span></h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="1000073999.jpg" alt="Cervezas Internacionales">
+                    <span class="badge">TOP VENTAS</span>
+                </div>
+                <div class="card-content">
+                    <h3>Pack Internacional</h3>
+                    <p>Stella, Becker y más.</p>
+                    <p class="price">$12.990</p>
+                    <a href="https://wa.me/56912345678" class="buy-btn">Pedir por WhatsApp</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="image-wrapper">
+                    <img src="1000073998.jpg" alt="Sin Alcohol">
+                    <span class="badge" style="background: var(--verde-wsp); color: white;">0.0% ALCOHOL</span>
+                </div>
+                <div class="card-content">
+                    <h3>Línea Consciente</h3>
+                    <p>Todo el sabor, cero alcohol.</p>
+                    <p class="price">$9.990</p>
+                    <a href="https://wa.me/56912345678" class="buy-btn">Pedir por WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="game-section">
+        <h2 class="section-title">EL DESAFÍO <span>CALLE CALLE</span></h2>
+        <p style="margin-bottom: 30px;">¡Si llegas a los 1000m tienes un 10% de dcto en tu próximo pedido!</p>
+        
+        <div class="game-ui">
+            <div>❤️ <span id="lives">3</span></div>
+            <div>📍 <span id="distance">0</span>m</div>
+            <div>⭐ <span id="score">0</span></div>
+        </div>
+
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <br>
+        <button id="startBtn">¡INICIAR EL DESAFÍO!</button>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: #888;">Controles: Flechas para mover | Espacio para saltar</p>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; color: #555;">
+        &copy; 2024 Botillería Calle Calle - Disfruta con responsabilidad.
+    </footer>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const startBtn = document.getElementById('startBtn');
+
+        let gameState = { running: false, lives: 3, distance: 0, score: 0, speed: 5, frame: 0 };
+        const player = { x: 50, y: 300, width: 40, height: 60, velocityY: 0, jumping: false, gravity: 0.8, jumpPower: -15 };
+        const obstacles = [];
+        const obstacleTypes = [
+            { emoji: '🍺', color: '#8b4513' },
+            { emoji: '🤘', color: '#ff1493' },
+            { emoji: '🔪', color: '#333' }
+        ];
+
+        startBtn.addEventListener('click', () => {
+            if(!gameState.running) {
+                gameState = { running: true, lives: 3, distance: 0, score: 0, speed: 5, frame: 0 };
+                obstacles.length = 0;
+                gameLoop();
+                startBtn.innerText = "REINICIAR";
+            }
+        });
+
+        // Controles sencillos
+        window.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && !player.jumping) {
+                player.velocityY = player.jumpPower;
+                player.jumping = true;
+            }
+        });
+
+        function gameLoop() {
+            if (!gameState.running) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Suelo
+            ctx.fillStyle = '#444';
+            ctx.fillRect(0, 360, canvas.width, 40);
+
+            // Jugador
+            player.velocityY += player.gravity;
+            player.y += player.velocityY;
+            if (player.y > 300) { player.y = 300; player.jumping = false; }
+            ctx.font = "40px Arial";
+            ctx.fillText("🏃", player.x, player.y);
+
+            // Obstáculos
+            if (gameState.frame % 80 === 0) {
+                const type = obstacleTypes[Math.floor(Math.random()*obstacleTypes.length)];
+                obstacles.push({ x: canvas.width, y: 310, type });
+            }
+
+            for (let i = obstacles.length - 1; i >= 0; i--) {
+                obstacles[i].x -= gameState.speed;
+                ctx.fillText(obstacles[i].type.emoji, obstacles[i].x, obstacles[i].y + 35);
+
+                // Colisión simple
+                if (Math.abs(player.x - obstacles[i].x) < 30 && Math.abs(player.y - obstacles[i].y) < 30) {
+                    gameState.lives--;
+                    obstacles.splice(i, 1);
+                    if (gameState.lives <= 0) {
+                        gameState.running = false;
+                        alert("¡Game Over! No llegaste a la boti.");
+                    }
+                }
+            }
+
+            gameState.distance += 1;
+            gameState.frame++;
+            document.getElementById('lives').innerText = gameState.lives;
+            document.getElementById('distance').innerText = gameState.distance;
+            
+            if (gameState.distance >= 1000) {
+                gameState.running = false;
+                alert("¡GANASTE! Pantallazo a esto y pide tu descuento al +56 9 1234 5678");
+            }
+
+            requestAnimationFrame(gameLoop);
+        }
+    </script>
+</body>
+</html>
