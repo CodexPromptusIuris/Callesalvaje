@@ -1,0 +1,20 @@
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  background: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.badge-oferta {
+  background-color: #E6D41E;
+  color: #000;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 0 0 10px 0;
+}
